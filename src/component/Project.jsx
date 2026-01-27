@@ -12,8 +12,8 @@ const projects = [
       {item: "Tailwind Css",icon:<SiTailwindcss/>},
       {item: "JavaScript",icon:<FaJs/>}
     ],
-    live: "#",
-    github: "#",
+    live: "https://myportfolio135.vercel.app",
+    github: "https://github.com/Prsenapati09/myportfolio",
   },
   {
     logo:<CakeSlice/>,
