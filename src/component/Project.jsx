@@ -30,7 +30,7 @@ const projects = [
     github: "https://github.com/Prsenapati09/Bakery-App",
   },
   {
-    logo:<Database/>,
+    logo:<FaNodeJs />,
     title: "CRUD Web App",
     description:
       "Backend CRUD application with REST APIs and database integration.",
@@ -43,6 +43,20 @@ const projects = [
     // tech: ["Node.js","Express js", "MongoDB Atlas"],
     live: "https://github.com/Prsenapati09/BookStore",
     github: "https://github.com/Prsenapati09/BookStore",
+  },
+  {
+    logo:<FaNodeJs />,
+    title: "User authentication",
+    description:
+      "Backend project .user registration and user Login with password hashing functionality using the bcrypt",
+    techicons :[<FaNodeJs/>,<FaReact/>],
+    tech: [
+      {item:"Node js",icon:<FaNodeJs/>},
+      {item: "Express js",icon:<SiExpress/>},
+      {item: "MongoDB ",icon:<SiMongodb/>}
+    ],
+    live: "https://github.com/Prsenapati09/UserModule-Backend",
+    github: "https://github.com/Prsenapati09/UserModule-Backend",
   },
   
 ];
