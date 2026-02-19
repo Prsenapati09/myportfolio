@@ -41,8 +41,8 @@ const Education = () => {
               key={index}
               className="
                 bg-gray-900 border border-gray-800 rounded-2xl p-6
-                transition-all duration-300
-                hover:-translate-y-2 hover:border-indigo-500
+                transition-all duration-300 border-l-4 border-l-indigo-500 hover:border-l-none
+                hover:-translate-y-2
                 hover:shadow-[0_0_25px_rgba(99,102,241,0.25)]
               "
             >

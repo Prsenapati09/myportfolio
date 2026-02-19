@@ -1,4 +1,4 @@
-import React from "react";
+
 import {
   FaHtml5,
   FaCss3Alt,
@@ -17,41 +17,41 @@ const skillsData = [
   {
     title: "Frontend",
     skills: [
-      { name: "HTML", icon: <FaHtml5 /> },
-      { name: "CSS", icon: <FaCss3Alt /> },
-      { name: "JavaScript", icon: <FaJs /> },
-      { name: "React.js", icon: <FaReact /> },
-      { name: "Tailwind CSS", icon: <SiTailwindcss /> },
+      { name: "HTML", icon: <FaHtml5 color="#E85D3F" /> },
+      { name: "CSS", icon: <FaCss3Alt color="#2F6FED"/> },
+      { name: "JavaScript", icon: <FaJs color="#F4C430" /> },
+      { name: "React.js", icon: <FaReact color="#22D3EE"/> },
+      { name: "Tailwind CSS", icon: <SiTailwindcss color="#14B8A6" /> },
     ],
   },
   {
     title: "Backend",
     skills: [
-      { name: "Node.js", icon: <FaNodeJs /> },
+      { name: "Node.js", icon: <FaNodeJs color="#3FAF5A" /> },
       { name: "Express.js", icon: <SiExpress /> },
     ],
   },
   {
     title: "Database",
     skills: [
-      { name: "MongoDB", icon: <SiMongodb /> },
-      { name: "MySQL", icon: <SiMysql /> },
+      { name: "MongoDB", icon: <SiMongodb color="#5A4FCF" /> },
+      { name: "MySQL", icon: <SiMysql color="#0E7490" /> },
     ],
   },
   {
     title: "Tools",
     skills: [
-      { name: "Git", icon: <FaGitAlt /> },
-      { name: "GitHub", icon: <FaGithub /> },
-      { name: "Postman", icon: <SiPostman /> },
-      { name: "VS Code", icon: <VscCode /> },
+      { name: "Git", icon: <FaGitAlt  color="#F05133"/> },
+      { name: "GitHub", icon: <FaGithub color="#181717"/> },
+      { name: "Postman", icon: <SiPostman color="#FF6C37" /> },
+      { name: "VS Code", icon: <VscCode color="#2979FF" /> },
     ],
   },
   {
     title: "Languages",
     skills: [
-      { name: "Python", icon: <FaPython /> },
-      { name: "JavaScript", icon: <FaJs /> },
+      { name: "Python", icon: <FaPython color="#5A4FCF" /> },
+      { name: "JavaScript", icon: <FaJs color="#F4C430" /> },
     ],
   },
 ];
@@ -76,7 +76,7 @@ const Skills = () => {
           {skillsData.map((category) => (
             <div
               key={category.title}
-              className="bg-gray-900 border border-gray-800 rounded-2xl p-6 hover:border-indigo-500 transition hover:scale-103"
+              className="bg-gray-900 border-l-4 rounded-2xl p-6 border-indigo-500 transition hover:scale-103 hover:shadow-[0_0_25px_rgba(99,102,241,0.25)]"
             >
               <h3 className="text-xl text-indigo-500 font-semibold mb-4">
                 {category.title}

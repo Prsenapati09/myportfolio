@@ -39,12 +39,11 @@ const About = () => {
           {/* Skills Tags */}
           <div className="flex flex-wrap gap-3 mb-8">
             {[
-              "React",
+              `React`,
               "Node.js",
               "MongoDB",
               "Express",
               "Tailwind CSS",
-              "JWT",
             ].map((skill) => (
               <span
                 key={skill}

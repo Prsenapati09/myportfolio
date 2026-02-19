@@ -1,62 +1,72 @@
 import React from "react";
 import {Database,CakeSlice} from "lucide-react"
-import {FaJs,FaReact,FaNodeJs}  from "react-icons/fa";
+import {FaJs,FaReact,FaNodeJs,FaBriefcase}  from "react-icons/fa";
 import { SiTailwindcss, SiMongodb,SiExpress } from "react-icons/si";
 const projects = [
   {
+    logo:<FaBriefcase size={23} color="#007BFF" />,
     title: "Portfolio Website",
     description:
       "Personal portfolio built with React and Tailwind CSS showcasing projects and skills.",
     tech: [
-      {item:"React",icon:<FaReact/>},
-      {item: "Tailwind Css",icon:<SiTailwindcss/>},
-      {item: "JavaScript",icon:<FaJs/>}
+      {item:"React",icon:<FaReact size={18} color="#61DAFB"/>},
+      {item: "Tailwind Css",icon:<SiTailwindcss size={18} color="#38BDF8"/>},
+      {item: "JavaScript",icon:<FaJs size={18} color="#F7DF1E"/>}
     ],
     live: "https://myportfolio135.vercel.app",
     github: "https://github.com/Prsenapati09/myportfolio",
   },
   {
-    logo:<CakeSlice/>,
+    logo:<CakeSlice size={23} />,
     title: "Bakery Site",
     description:
       "JWT based login, register, and forgot password system using Node.js and MongoDB.",
     tech: [
-      {item:"React",icon:<FaReact/>},
-      {item: "Tailwind Css",icon:<SiTailwindcss/>},
-      {item: "JavaScript",icon:<FaJs/>}
+      {item:"React",icon:<FaReact size={18} color="#61DAFB"/>},
+      {item: "Tailwind Css",icon:<SiTailwindcss size={18} color="#38BDF8"/>},
+      {item: "JavaScript",icon:<FaJs size={18} color="#F7DF1E"/>}
     ],
-    // tech: ["reactjs", "Tailwind Css", "Javascript"],
     live: "https://pr-bakery.vercel.app/",
     github: "https://github.com/Prsenapati09/Bakery-App",
   },
   {
-    logo:<FaNodeJs />,
+    logo:<FaNodeJs size={23} color="#339933" />,
     title: "CRUD Web App",
     description:
       "Backend CRUD application with REST APIs and database integration.",
-    techicons :[<FaNodeJs/>,<FaReact/>],
     tech: [
-      {item:"Node js",icon:<FaNodeJs/>},
-      {item: "Express js",icon:<SiExpress/>},
-      {item: "MongoDB Atlas",icon:<SiMongodb/>}
+      {item:"Node js",icon:<FaNodeJs size={18} color="#339933"/>},
+      {item: "Express js",icon:<SiExpress size={18} />},
+      {item: "MongoDB Atlas",icon:<SiMongodb size={18} color="#47A248"/>}
     ],
-    // tech: ["Node.js","Express js", "MongoDB Atlas"],
     live: "https://github.com/Prsenapati09/BookStore",
     github: "https://github.com/Prsenapati09/BookStore",
   },
   {
-    logo:<FaNodeJs />,
+    logo:<FaNodeJs size={18} color="#339933"/>,
     title: "User authentication",
     description:
       "Backend project .user registration and user Login with password hashing functionality using the bcrypt",
-    techicons :[<FaNodeJs/>,<FaReact/>],
     tech: [
-      {item:"Node js",icon:<FaNodeJs/>},
-      {item: "Express js",icon:<SiExpress/>},
-      {item: "MongoDB ",icon:<SiMongodb/>}
+      {item:"Node js",icon:<FaNodeJs size={18} color="#339933"/>},
+      {item: "Express js",icon:<SiExpress size={18}/>},
+      {item: "MongoDB ",icon:<SiMongodb size={18} color="#47A248"/>}
     ],
     live: "https://github.com/Prsenapati09/UserModule-Backend",
     github: "https://github.com/Prsenapati09/UserModule-Backend",
+  },
+  {
+    logo:<FaNodeJs size={23} color="#339933"/>,
+    title: "Url Shortner",
+    description:
+      "it is Url Shortner Backend project user give the long url server give a short url as the response . use the short url you can redirect the original page ",
+    tech: [
+      {item:"Node js",icon:<FaNodeJs size={18} color="#339933"/>},
+      {item: "Express js",icon:<SiExpress size={18} />},
+      {item: "MongoDB ",icon:<SiMongodb size={18}color="#47A248"/>}
+    ],
+    live: "https://github.com/Prsenapati09/Urlshortner",
+    github: "https://github.com/Prsenapati09/Urlshortner",
   },
   
 ];
@@ -81,7 +91,7 @@ const Projects = () => {
           {projects.map((project, index) => (
             <div
               key={index}
-              className="bg-gray-900 border border-gray-800 rounded-2xl p-6 hover:border-indigo-500 transition flex flex-col hover:-translate-y-2 duration-100"
+              className="bg-gray-900 border-l-4 border-gray-800 rounded-2xl p-6 hover:border-indigo-500 transition flex flex-col hover:-translate-y-2 duration-100 border-l-indigo-500 hover:shadow-[0_0_25px_rgba(99,102,241,0.25)]"
             >
               <h3 className="m-2.5">{project.logo}</h3>
               {/* Project Title */}
