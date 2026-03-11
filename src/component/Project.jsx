@@ -20,7 +20,7 @@ const projects = [
     logo:<CakeSlice size={23} />,
     title: "Bakery Site",
     description:
-      "JWT based login, register, and forgot password system using Node.js and MongoDB.",
+      "it is a bakery site . where show case the product and services form tha beakery .",
     tech: [
       {item:"React",icon:<FaReact size={18} color="#61DAFB"/>},
       {item: "Tailwind Css",icon:<SiTailwindcss size={18} color="#38BDF8"/>},
