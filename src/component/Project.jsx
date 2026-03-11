@@ -20,7 +20,7 @@ const projects = [
     logo:<CakeSlice size={23} />,
     title: "Bakery Site",
     description:
-      "it is a bakery site . where show case the product and services form tha beakery .",
+      "it is a bakery site . where show case the product and services form the beakery shop.",
     tech: [
       {item:"React",icon:<FaReact size={18} color="#61DAFB"/>},
       {item: "Tailwind Css",icon:<SiTailwindcss size={18} color="#38BDF8"/>},
