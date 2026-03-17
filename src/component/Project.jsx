@@ -46,7 +46,7 @@ const projects = [
     logo:<FaNodeJs size={18} color="#339933"/>,
     title: "User authentication",
     description:
-      "Backend project .user registration and user Login with password hashing functionality using the bcrypt",
+      "Backend project user signup and signin and password hashing using the bcrypt and token base authentication . and advance concept like claudinary and rate limit",
     tech: [
       {item:"Node js",icon:<FaNodeJs size={18} color="#339933"/>},
       {item: "Express js",icon:<SiExpress size={18}/>},
