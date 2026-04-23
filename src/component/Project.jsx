@@ -68,6 +68,20 @@ const projects = [
     live: "https://github.com/Prsenapati09/Urlshortner",
     github: "https://github.com/Prsenapati09/Urlshortner",
   },
+  {
+    logo:<FaNodeJs size={23} color="#339933"/>,
+    title: "Fullstack LibraryManagement System",
+    description:
+      "it is fullstack LibraryManagement System project . User authentication system . rolebase authentication and Admin panel only Admin user can see the admin panel . user see the books and read the books ",
+    tech: [
+      {item:"React",icon:<FaReact size={18} color="#61DAFB"/>},
+      {item:"Node js",icon:<FaNodeJs size={18} color="#339933"/>},
+      {item: "Express js",icon:<SiExpress size={18} />},
+      {item: "MongoDB ",icon:<SiMongodb size={18}color="#47A248"/>}
+    ],
+    live: "https://fullstack-library-management.vercel.app/",
+    github: "https://github.com/Prsenapati09/FullStack-LibraryManagement",
+  },
   
 ];
 
