@@ -1,1 +1,81 @@
 @import "tailwindcss";
+@custom-variant dark (&:where(.dark, .dark *));
+
+@theme {
+  --color-void: var(--void);
+  --color-char: var(--char);
+  --color-edge: var(--edge);
+  --color-ash: var(--ash);
+  --color-paper: var(--paper);
+  --color-flare: #ff4d1c;
+
+  --font-display: "Anton", sans-serif;
+  --font-body: "DM Sans", sans-serif;
+  --font-mono: "JetBrains Mono", monospace;
+
+  --animate-marquee: marquee 28s linear infinite;
+  --animate-rise: rise 0.7s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+  --animate-pulse-dot: pulse-dot 2s ease-in-out infinite;
+}
+
+/* 1. Default (Dark Mode) - Used when page first loads */
+:root {
+  --void: #050505;
+  --char: #0e0e0e;
+  --edge: #1f1f1f;
+  --ash: #8c8c8c;
+  --paper: #f4f1ec;
+}
+
+
+:root:not(.dark) {
+  --void: #f4f1ec;
+  --char: #e5e2db;
+  --edge: #d1cbd5;
+  --ash: #595959;
+  --paper: #050505;
+}
+
+
+
+@keyframes rise {
+  from { opacity: 0; transform: translateY(28px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes pulse-dot {
+  0%, 100% { opacity: 1; transform: scale(1); }
+  50%      { opacity: 0.4; transform: scale(0.8); }
+}
+
+body {
+  @apply bg-void text-paper font-body antialiased transition-colors duration-300;
+}
+
+/* faint grid that adjusts color based on theme */
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 0;
+  background-image:
+    linear-gradient(to right, currentColor 1px, transparent 1px),
+    linear-gradient(to bottom, currentColor 1px, transparent 1px);
+  opacity: 0.03;
+  background-size: 72px 72px;
+  mask-image: radial-gradient(ellipse at 50% 0%, #000 20%, transparent 78%);
+}
+
+::selection {
+  background: var(--color-flare);
+  color: var(--color-void);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}

@@ -1,147 +1,107 @@
-import { useState } from "react";
-import { NavLink } from "react-router";
-import { CgMenuRightAlt } from "react-icons/cg";
 
+import { useState, useEffect } from "react";
+import { NavLink, Link } from "react-router";
+import { Menu, X, Sun, Moon } from "lucide-react";
 
-const Navbar = () => {
-  const [isOpen, setIsOpen] = useState(false);
+const links = [
+  { to: "/", label: "Home", index: "01" },
+  { to: "/about", label: "About", index: "02" },
+  { to: "/education", label: "Education", index: "03" },
+  { to: "/skills", label: "Skills", index: "04" },
+  { to: "/projects", label: "Project", index: "05" },
+  { to: "/contact", label: "Contact", index: "06" },
+];
+
+export default function Navbar() {
+  const [open, setOpen] = useState(false);
+  const [dark, setDark] = useState(true);
+
+  useEffect(() => {
+    const saved = localStorage.getItem("theme");
+    const isDark = saved ? saved === "dark" : true; 
+    setDark(isDark);
+    document.documentElement.classList.toggle("dark", isDark);
+  }, []);
+
+  const toggleTheme = () => {
+    const next = !dark;
+    setDark(next);
+    document.documentElement.classList.toggle("dark", next);
+    localStorage.setItem("theme", next ? "dark" : "light");
+  };
 
   return (
-    <nav className="fixed top-0 w-full bg-white dark:bg-gray-900 shadow z-50">
-      <div className="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
-        
-        {/* Logo */}
-        <h1 className="text-2xl font-bold text-gray-800 dark:text-white">
-          MY<span className="text-indigo-500">Portfolio</span>
-        </h1>
-
-        {/* Desktop Menu */}
-        <ul className="hidden md:flex space-x-8 text-gray-700 dark:text-gray-200 font-semibold text-[18px]">
-      
-          <NavLink to="/"
-          className={({ isActive }) =>
-            `relative inline-block cursor-pointer transition-colors duration-300
-            ${isActive ? "text-indigo-500" : "text-white-400 hover:text-amber-400"}`
-          }>
-          {({ isActive }) => (
-          <>
-          Home
-            {isActive && (
-            <span className="absolute left-0 -bottom-1 w-full h-0.5 bg-amber-400 rounded-full" />
-            )}
-          </>
-            )}
-          </NavLink>
-          <NavLink to="/About"
-          className={({ isActive }) =>
-            `relative inline-block cursor-pointer transition-colors duration-300
-            ${isActive ? "text-indigo-500" : "text-white-400 hover:text-amber-400"}`
-          }>
-          {({ isActive }) => (
-          <>
-          About
-            {isActive && (
-            <span className="absolute left-0 -bottom-1 w-full h-0.5 bg-amber-400 rounded-full" />
-            )}
-          </>
-            )}
-          </NavLink>
-          <NavLink to="/Education"
-          className={({ isActive }) =>
-            `relative inline-block cursor-pointer transition-colors duration-300
-            ${isActive ? "text-indigo-500" : "text-white-400 hover:text-amber-400"}`
-          }>
-          {({ isActive }) => (
-          <>
-          Education
-            {isActive && (
-            <span className="absolute left-0 -bottom-1 w-full h-0.5 bg-amber-400 rounded-full" />
-            )}
-          </>
-            )}
-          </NavLink>
-          <NavLink to="/Skills"
-          className={({ isActive }) =>
-            `relative inline-block cursor-pointer transition-colors duration-300
-            ${isActive ? "text-indigo-500" : "text-white-400 hover:text-amber-400"}`
-          }>
-          {({ isActive }) => (
-          <>
-          Skills
-            {isActive && (
-            <span className="absolute left-0 -bottom-1 w-full h-0.5 bg-amber-400 rounded-full" />
-            )}
-          </>
-            )}
-          </NavLink>
-          <NavLink to='/Projects'
-          className={({ isActive }) =>
-            `relative inline-block cursor-pointer transition-colors duration-300
-            ${isActive ? "text-indigo-500" : "text-white-400 hover:text-amber-400"}`
-          }>
-          {({ isActive }) => (
-          <>
-          Projects
-            {isActive && (
-            <span className="absolute left-0 -bottom-1 w-full h-0.5 bg-amber-400 rounded-full" />
-            )}
-          </>
-            )}
-          </NavLink>
-          <NavLink to='/Contact'
-          className={({ isActive }) =>
-            `relative inline-block cursor-pointer transition-colors duration-300
-            ${isActive ? "text-indigo-500" : "text-white-400 hover:text-amber-400"}`
-          }>
-          {({ isActive }) => (
-          <>
-          Contact
-            {isActive && (
-            <span className="absolute left-0 -bottom-1 w-full h-0.5 bg-amber-400 rounded-full" />
-            )}
-          </>
-            )}
-          </NavLink>
-        </ul>
-
-        {/* Mobile Menu Button */}
-        <button
-          className="md:hidden text-gray-800 dark:text-white text-2xl"
-          onClick={() => setIsOpen(!isOpen)}
+    <header className="sticky top-0 z-50 border-b border-edge bg-void/80 backdrop-blur-md">
+      <nav className="mx-auto flex max-w-6xl items-center justify-between px-6 py-5">
+        <Link
+          to="/"
+          onClick={() => setOpen(false)}
+          className="font-mono text-2xl tracking-wide text-paper"
         >
-          <CgMenuRightAlt />
-        </button>
-      </div>
+          Pravat<span className="text-flare">.</span>
+        </Link>
 
-      {/* Mobile Menu */}
-      {isOpen && (
-        <div className="md:hidden bg-white dark:bg-gray-900 shadow-lg">
-          <ul className="flex flex-col space-y-4 px-6 py-6 text-gray-700 dark:text-gray-200 font-medium">
-            <NavLink to="/"> 
-            <li onClick={()=> setIsOpen(false)}>Home</li> 
+        {/* desktop links */}
+        <div className="hidden items-center gap-9 font-mono text-sm md:flex">
+          {links.map((l) => (
+            <NavLink
+              key={l.to}
+              to={l.to}
+              end={l.to === "/"}
+              className={({ isActive }) =>
+                `relative py-1 transition-colors duration-200 ${
+                  isActive ? "text-flare" : "text-ash hover:text-paper"
+                }`
+              }
+            >
+              {l.label}
             </NavLink>
+          ))}
+        </div>
 
-            <NavLink to="/About">
-             <li onClick={()=> setIsOpen(false)}>About</li>
-             </NavLink>
+        {/* right side: theme toggle + mobile trigger */}
+        <div className="flex items-center gap-4">
+          <button
+            onClick={toggleTheme}
+            aria-label="Toggle theme"
+            className="rounded-full border border-edge p-2 text-ash transition-colors duration-200 hover:text-flare"
+          >
+            {dark ? <Sun size={16} /> : <Moon size={16} />}
+          </button>
 
-            <NavLink to="/Skills"> 
-            <li onClick={()=> setIsOpen(false)}>Skills</li>
-            </NavLink>
+          <button
+            onClick={() => setOpen((o) => !o)}
+            aria-label="Toggle menu"
+            className="text-paper md:hidden"
+          >
+            {open ? <X size={22} /> : <Menu size={22} />}
+          </button>
+        </div>
+      </nav>
 
-            <NavLink to="/Projects">
-             <li onClick={()=> setIsOpen(false)}>Projects</li>
-             </NavLink>
-
-            <NavLink to="/Contact">
-            <li onClick={()=> setIsOpen(false)}>Contact</li>
-            </NavLink>
-
-          </ul>
+      {/* mobile menu */}
+      {open && (
+        <div className="border-t border-edge bg-void px-6 pb-6 pt-2 font-mono text-sm md:hidden">
+          <div className="flex flex-col gap-4">
+            {links.map((l) => (
+              <NavLink
+                key={l.to}
+                to={l.to}
+                end={l.to === "/"}
+                onClick={() => setOpen(false)}
+                className={({ isActive }) =>
+                  `py-1 transition-colors duration-200 ${
+                    isActive ? "text-flare" : "text-ash hover:text-paper"
+                  }`
+                }
+              >
+                <span className="mr-2 text-ash/60">{l.index}</span>
+                {l.label}
+              </NavLink>
+            ))}
+          </div>
         </div>
       )}
-    </nav>
+    </header>
   );
-};
-
-export default Navbar;
+}

@@ -1,14 +1,13 @@
 
-import About from './component/About'
+import About from './pages/About'
 import Footer from './component/Footer'
-import Home from './component/Home'
+import Home from './pages/Home'
 import Navbar from './component/Navbar'
 import {createBrowserRouter,RouterProvider} from 'react-router'
-// import Skills from './component/Skills'
-import Skill from './component/Skills'
-import Projects from './component/Project'
-import Contact from './component/Contact'
-import Education from './component/Education'
+import Skill from './pages/Skills'
+import Projects from './pages/Project'
+import Contact from './pages/Contact'
+import Education from './pages/Education'
 
 const App = () => {
   const router = createBrowserRouter([
