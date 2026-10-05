@@ -1,4 +1,4 @@
-
+import { Analytics } from '@vercel/analytics/react'
 import About from './pages/About'
 import Footer from './component/Footer'
 import Home from './pages/Home'
@@ -67,7 +67,10 @@ const App = () => {
     }
   ])
   return (
-    <RouterProvider router={router}/>
+    <>
+      <RouterProvider router={router}/>
+      <Analytics />
+    </>
   )
 }
 
