@@ -8,6 +8,20 @@ import { CakeSlice } from "lucide-react";
 const projects = [
   {
     logo: <FaNodeJs size={23} className="text-[#339933]" />,
+    title: "Mark Down Editor",
+    description:
+      " Mark down editor . Here you can creat, preview and edit the markdown file . Production style application . ",
+    tech: [
+      { item: "React", icon: <FaReact size={16} className="text-[#61DAFB]" /> },
+      { item: "Node.js", icon: <FaNodeJs size={16} className="text-[#339933]" /> },
+      { item: "Express.js", icon: <SiExpress size={16} className="text-paper" /> },
+      { item: "MongoDB", icon: <SiMongodb size={16} className="text-[#47A248]" /> },
+    ],
+    live: "https://folio-mark-down.vercel.app/",
+    github: "https://github.com/Prsenapati09/MarkDown-editor",
+  },
+  {
+    logo: <FaNodeJs size={23} className="text-[#339933]" />,
     title: "Digital Library Management",
     description:
       "Full-stack library system with secure role-based authentication, an administrative dashboard, and real-time document viewing.",
