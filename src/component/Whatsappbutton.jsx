@@ -1,6 +1,6 @@
 import { FaWhatsapp } from 'react-icons/fa';
 
-const PHONE = "919876543210"; // replace with your number
+const PHONE = "919861573263";
 const MESSAGE = "Hi Pravat, I visited your portfolio and wanted to connect with you!"
 
 const WhatsApp = () => {
