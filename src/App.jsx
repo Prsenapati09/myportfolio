@@ -8,6 +8,7 @@ import Skill from './pages/Skills'
 import Projects from './pages/Project'
 import Contact from './pages/Contact'
 import Education from './pages/Education'
+import WhatappButton from './component/Whatsappbutton'
 
 const App = () => {
   const router = createBrowserRouter([
@@ -17,6 +18,7 @@ const App = () => {
       <>
       <Navbar/>
       <Home/>
+      <WhatappButton/>
       <Footer/>
       </>
     },
@@ -26,6 +28,7 @@ const App = () => {
       <>
       <Navbar/>
       <About/>
+      <WhatappButton/>
       <Footer/>
       </>
     },
@@ -35,6 +38,7 @@ const App = () => {
       <>
       <Navbar/>
       <Education/>
+      <WhatappButton/>
       <Footer/>
       </>
     },
@@ -44,6 +48,7 @@ const App = () => {
       <>
       <Navbar/>
       <Skill/>
+      <WhatappButton/>
       <Footer/>
       </>
     },
@@ -53,6 +58,7 @@ const App = () => {
       <>
       <Navbar/>
       <Projects/>
+      <WhatappButton/>
       <Footer/>
       </>
     },
@@ -62,6 +68,7 @@ const App = () => {
       <>
       <Navbar/>
       <Contact/>
+      <WhatappButton/>
       <Footer/>
       </>
     }

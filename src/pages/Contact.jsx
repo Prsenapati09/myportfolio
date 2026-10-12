@@ -4,7 +4,7 @@ import { Send, Mail, Phone, MapPin, ArrowUpRight } from "lucide-react";
 
 const details = [
   { icon: Mail, label: "prsenapati595@gmail.com", href: "mailto:you@email.com", sub: "Direct Mail" },
-  { icon: Phone, label: "+91 98615 73263", href: "tel:+91 9861573263", sub: "WhatsApp / Call" },
+  { icon: Phone, label: "+91 98615 73263", href: "tel:+91 9861573263", sub: "Call" },
   { icon: MapPin, label: "odisha, India", href: null, sub: "Based in" },
 ];
 

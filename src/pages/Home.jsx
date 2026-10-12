@@ -2,7 +2,10 @@
 import { Link } from "react-router";
 import { ArrowDownRight } from "lucide-react";
 
+const PHONE = "919861573263"; // replace with your number
+const MESSAGE = "Hi, I saw your portfolio and would like to connect.";
 export default function Home() {
+  const link = `https://wa.me/${PHONE}?text=${encodeURIComponent(MESSAGE)}`;
   return (
     <div className="relative z-10">
       <section className="mx-auto max-w-6xl px-6 pt-16 pb-24">
@@ -47,6 +50,7 @@ export default function Home() {
               className="transition-transform duration-300 group-hover:translate-y-1"
             />
           </Link>
+          
         </div>
       </section>
 
